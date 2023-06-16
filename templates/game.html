@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content%}
+<div class="container">
+	<span>Score:</span>
+	<span class="num">0</span>
+</div>
+<table>
+	{% for row in session['board'] %}
+	<tr>
+		{% for letter in row %}
+		<td>{{letter}}</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}
+</table>
+
+<div class="container">
+	<form action="#" name="guess_form">
+		<input type="text" placeholder="Your guess goes here!" name="guess_input" />
+		<button>Submit</button>
+	</form>
+</div>
+{% endblock %}
